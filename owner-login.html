@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Owner Login - ParkSpot</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/login.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="container">
+      <div class="navbar-content">
+        <a href="index.html" class="logo">
+          <div class="logo-icon">
+            <i class="fa-solid fa-car"></i>
+          </div>
+          <span>ParkSpot</span>
+        </a>
+        <div class="nav-links" id="navLinks">
+          
+         
+          <a href="add-parking.html">Add Parking</a>
+          <a href="owner-login.html" class="active">Owner Login</a>
+          <a href="user-login.html">User Login</a>
+          <a href="payment.html">Payment</a>
+        </div>
+        <button class="menu-toggle" id="menuToggle">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <div class="login-container">
+      <div class="login-card owner">
+        <div class="login-header">
+          <h2>Owner Login</h2>
+          <p>Enter your credentials to manage your parking spaces</p>
+        </div>
+        <div class="login-body">
+          <form id="ownerLoginForm">
+            <div class="form-group">
+              <label for="ownerUsername">Username</label>
+              <div class="input-icon">
+                <i class="fa-solid fa-user-gear"></i>
+                <input type="text" id="ownerUsername" placeholder="Enter your username" required>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="ownerPassword">Password</label>
+              <div class="input-icon">
+                <i class="fa-solid fa-lock"></i>
+                <input type="password" id="ownerPassword" placeholder="Enter your password" required>
+              </div>
+            </div>
+            <button type="submit" class="btn btn-secondary login-btn">
+              Login
+            </button>
+          </form>
+          
+        </div>
+        <div class="login-footer">
+          <p>Don't have an account? Contact admin to register as a parking owner.</p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="js/main.js"></script>
+  <script src="js/owner-login.js"></script>
+</body>
+</html>
+

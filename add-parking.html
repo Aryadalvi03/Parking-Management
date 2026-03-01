@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add Parking - ParkSpot</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/add-parking.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="container">
+      <div class="navbar-content">
+        <a href="index.html" class="logo">
+          <div class="logo-icon">
+            <i class="fa-solid fa-car"></i>
+          </div>
+          <span>ParkSpot</span>
+        </a>
+        <div class="nav-links" id="navLinks">
+         
+          
+          <a href="add-parking.html" class="active">Add Parking</a>
+          <a href="owner-login.html">Owner Login</a>
+          <a href="user-login.html">User Login</a>
+          <a href="payment.html">Payment</a>
+        </div>
+        <button class="menu-toggle" id="menuToggle">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <div class="add-parking-container">
+      <div class="add-parking-card">
+        <div class="card-header">
+          <h2>Register Parking Space</h2>
+          <p>Add your parking space to make it available for users</p>
+        </div>
+        <div class="card-body">
+          <form id="addParkingForm">
+            <div class="form-grid">
+              <div class="form-group">
+                <label for="ownerName">Owner Name</label>
+                <input type="text" id="ownerName" placeholder="Enter owner name" required>
+              </div>
+              <div class="form-group">
+                <label for="parkingName">Parking Name</label>
+                <input type="text" id="parkingName" placeholder="Enter parking name" required>
+              </div>
+              <div class="form-group full-width">
+                <label for="address">Address</label>
+                <input type="text" id="address" placeholder="Enter full address" required>
+              </div>
+              <div class="form-group">
+                <label for="totalSpaces">Total Parking Spaces</label>
+                <input type="number" id="totalSpaces" placeholder="Enter total spaces" min="1" required>
+              </div>
+              <div class="form-group">
+                <label for="pricePerHour">Price Per Hour ($)</label>
+                <input type="number" id="pricePerHour" placeholder="Enter price per hour" min="0" step="0.01" required>
+              </div>
+              <div class="form-group">
+                <label for="availableFrom">Available From</label>
+                <div class="date-picker">
+                  <i class="fa-solid fa-calendar"></i>
+                  <input type="text" id="availableFrom" placeholder="Select date" required>
+                </div>
+              </div>
+              <div class="form-group full-width">
+                <label>Location Coordinates</label>
+                <div class="coordinates-group">
+                  <input type="text" id="latitude" placeholder="Latitude" required>
+                  <input type="text" id="longitude" placeholder="Longitude" required>
+                </div>
+                <button type="button" id="getCurrentLocation" class="btn btn-outline location-btn">
+                  <i class="fa-solid fa-map-pin"></i>
+                  Use Current Location
+                </button>
+              </div>
+            </div>
+            <button type="submit" class="btn btn-secondary submit-btn">
+              <i class="fa-solid fa-car"></i>
+              Register Parking Space
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+  <script src="js/main.js"></script>
+  <script src="js/add-parking.js"></script>
+</body>
+</html>
+

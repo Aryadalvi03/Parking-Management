@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ParkSpot - Real-Time Parking Management</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="container">
+      <div class="navbar-content">
+        <a href="index.html" class="logo">
+          <div class="logo-icon">
+            <i class="fa-solid fa-car"></i>
+          </div>
+          <span>ParkSpot</span>
+        </a>
+        <div class="nav-links" id="navLinks">
+         
+          <a href="parking-search.html">Find Parking</a>
+          <a href="add-parking.html">Add Parking</a>
+          <a href="owner-login.html">Owner Login</a>
+          <a href="user-login.html">User Login</a>
+          <a href="payment.html">Payment</a>
+        </div>
+        <button class="menu-toggle" id="menuToggle">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <div class="hero">
+      <div class="container">
+        <div class="hero-content">
+          <div class="app-icon">
+            <div class="icon-bg-1"></div>
+            <div class="icon-bg-2"></div>
+            <div class="icon-main">
+              <i class="fa-solid fa-car"></i>
+            </div>
+          </div>
+          <h1>Find Parking <span>In Real-Time</span></h1>
+          <p>Locate available parking spots, view restricted areas, and book your space with just a few clicks.</p>
+          <div class="hero-buttons">
+            <a href="user-login.html" class="btn btn-primary">
+              <i class="fa-solid fa-user"></i>
+              User Login
+            </a>
+            <a href="owner-login.html" class="btn btn-secondary">
+              <i class="fa-solid fa-user-gear"></i>
+              Owner Login
+            </a>
+          </div>
+          <div class="map-button">
+            <a href="parking-search.html" class="btn btn-outline">
+              <i class="fa-solid fa-map-pin"></i>
+              View Parking Map
+            </a>
+          </div>
+        </div>
+        
+        <div class="features-card">
+          <h2>How It Works</h2>
+          <div class="features-grid">
+            <div class="feature-item blue">
+              <div class="feature-icon">
+                <i class="fa-solid fa-map-pin"></i>
+              </div>
+              <h3>Find Parking</h3>
+              <p>Search for available parking spots near your location in real-time.</p>
+            </div>
+            <div class="feature-item green">
+              <div class="feature-icon">
+                <i class="fa-solid fa-car"></i>
+              </div>
+              <h3>Book a Spot</h3>
+              <p>Reserve your parking space with just a few clicks.</p>
+            </div>
+            <div class="feature-item purple">
+              <div class="feature-icon">
+                <i class="fa-solid fa-user-gear"></i>
+              </div>
+              <h3>Manage Parking</h3>
+              <p>Parking owners can register and manage their parking spaces.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
+

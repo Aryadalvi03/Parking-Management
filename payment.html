@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment - Parking Management System</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/payment.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container navbar-content">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">
+                    <i class="fas fa-parking"></i>
+                </div>
+                ParkSpot
+            </a>
+            <div class="nav-links" id="navLinks">
+                
+                
+                <a href="add-parking.html">Add Parking</a>
+                <a href="owner-login.html">Owner Login</a>
+                <a href="user-login.html">User Login</a>
+                <a href="payment.html">Payment</a>
+            </div>
+            <button class="menu-toggle" id="menuToggle">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container">
+        <div class="page-header">
+            <h1>Payment</h1>
+            <p>Complete your parking reservation</p>
+        </div>
+
+        <div class="payment-container">
+            <!-- Booking Summary Card -->
+            <div class="card booking-summary">
+                <div class="card-header">
+                    <h2>Booking Summary</h2>
+                    <p>Review your parking details</p>
+                </div>
+                <div class="card-body">
+                    <div class="booking-details">
+                        <div class="booking-item">
+                            <span class="label">Parking Location:</span>
+                            <span class="value" id="parkingLocation">Downtown Parking Garage</span>
+                        </div>
+                        <div class="booking-item">
+                            <span class="label">Address:</span>
+                            <span class="value" id="parkingAddress">123 Main Street, City</span>
+                        </div>
+                        <div class="booking-item">
+                            <span class="label">Date:</span>
+                            <span class="value" id="parkingDate">March 28, 2025</span>
+                        </div>
+                        <div class="booking-item">
+                            <span class="label">Time:</span>
+                            <span class="value" id="parkingTime">09:00 AM - 05:00 PM</span>
+                        </div>
+                        <div class="booking-item">
+                            <span class="label">Duration:</span>
+                            <span class="value" id="parkingDuration">8 hours</span>
+                        </div>
+                        <div class="booking-item">
+                            <span class="label">Rate:</span>
+                            <span class="value" id="parkingRate">Rs.2.50/hour</span>
+                        </div>
+                        <div class="booking-item total">
+                            <span class="label">Total Amount:</span>
+                            <span class="value" id="totalAmount">Rs.20.00</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Payment Method Card -->
+            <div class="card payment-method">
+                <div class="card-header">
+                    <h2>Payment Method</h2>
+                    <p>Choose how you want to pay</p>
+                </div>
+                <div class="card-body">
+                    <div class="payment-tabs">
+                        <button class="payment-tab active" data-tab="card">
+                            <i class="fas fa-credit-card"></i> Credit/Debit Card
+                        </button>
+                        <button class="payment-tab" data-tab="paypal">
+                            <i class="fab fa-paypal"></i> PayPal
+                        </button>
+                        <button class="payment-tab" data-tab="wallet">
+                            <i class="fas fa-wallet"></i> Wallet
+                        </button>
+                    </div>
+
+                    <div class="payment-tab-content active" id="card-content">
+                        <form id="card-payment-form" class="payment-form">
+                            <div class="form-group">
+                                <label for="cardNumber">Card Number</label>
+                                <div class="input-icon">
+                                    <input type="text" id="cardNumber" placeholder="1234 5678 9012 3456" maxlength="19">
+                                    <i class="far fa-credit-card"></i>
+                                </div>
+                                <div class="card-icons">
+                                    <i class="fab fa-cc-visa"></i>
+                                    <i class="fab fa-cc-mastercard"></i>
+                                    <i class="fab fa-cc-amex"></i>
+                                    <i class="fab fa-cc-discover"></i>
+                                </div>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="cardName">Cardholder Name</label>
+                                    <input type="text" id="cardName" placeholder="John Doe">
+                                </div>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="expiryDate">Expiry Date</label>
+                                    <input type="text" id="expiryDate" placeholder="MM/YY" maxlength="5">
+                                </div>
+                                <div class="form-group">
+                                    <label for="cvv">CVV</label>
+                                    <div class="input-icon">
+                                        <input type="text" id="cvv" placeholder="123" maxlength="4">
+                                        <i class="fas fa-question-circle cvv-info" title="3-4 digit security code on the back of your card"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="billingZip">Billing Zip Code</label>
+                                <input type="text" id="billingZip" placeholder="12345">
+                            </div>
+                            
+                            <div class="form-group save-card">
+                                <label class="checkbox-container">
+                                    <input type="checkbox" id="saveCard">
+                                    <span class="checkmark"></span>
+                                    Save card for future payments
+                                </label>
+                            </div>
+                        </form>
+                    </div>
+
+                    <div class="payment-tab-content" id="paypal-content">
+                        <div class="paypal-info">
+                            <img src="/placeholder.svg?height=60&width=150" alt="PayPal" class="paypal-logo">
+                            <p>You will be redirected to PayPal to complete your payment securely.</p>
+                            <button class="btn btn-paypal">
+                                <i class="fab fa-paypal"></i> Pay with PayPal
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="payment-tab-content" id="wallet-content">
+                        <div class="wallet-balance">
+                            <h3>Wallet Balance</h3>
+                            <div class="balance-amount">Rs.45.00</div>
+                            <div class="balance-status">
+                                <span class="badge badge-success">Sufficient Balance</span>
+                            </div>
+                            <p class="wallet-info">Your wallet balance is sufficient for this payment.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Promo Code Card -->
+            <div class="card promo-code">
+                <div class="card-header">
+                    <h2>Promo Code</h2>
+                    <p>Apply a discount code</p>
+                </div>
+                <div class="card-body">
+                    <div class="promo-form">
+                        <div class="input-group">
+                            <input type="text" id="promoCode" placeholder="Enter promo code">
+                            <button class="btn btn-secondary" id="applyPromo">Apply</button>
+                        </div>
+                        <div class="promo-message" id="promoMessage"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Payment Summary -->
+            <div class="payment-summary">
+                <div class="summary-item">
+                    <span>Subtotal</span>
+                    <span id="subtotal">Rs.20.00</span>
+                </div>
+                <div class="summary-item">
+                    <span>Service Fee</span>
+                    <span id="serviceFee">Rs.1.50</span>
+                </div>
+                <div class="summary-item discount" id="discountRow" style="display: none;">
+                    <span>Discount</span>
+                    <span id="discount">-Rs.0.00</span>
+                </div>
+                <div class="summary-item total">
+                    <span>Total</span>
+                    <span id="finalTotal">Rs.21.50</span>
+                </div>
+                <button class="btn btn-primary btn-pay" id="completePayment">
+                    <i class="fas fa-lock"></i> Complete Payment
+                </button>
+                <p class="secure-payment">
+                    <i class="fas fa-shield-alt"></i> Secure payment processed with encryption
+                </p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Payment Success Modal -->
+    <div class="modal" id="paymentSuccessModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="success-icon">
+                    <i class="fas fa-check-circle"></i>
+                </div>
+                <h2>Payment Successful!</h2>
+            </div>
+            <div class="modal-body">
+                <p>Your payment has been processed successfully.</p>
+                <div class="confirmation-details">
+                    <div class="confirmation-item">
+                        <span class="label">Confirmation Number:</span>
+                        <span class="value" id="confirmationNumber">PK-12345678</span>
+                    </div>
+                    <div class="confirmation-item">
+                        <span class="label">Amount Paid:</span>
+                        <span class="value" id="amountPaid">Rs.21.50</span>
+                    </div>
+                    <div class="confirmation-item">
+                        <span class="label">Payment Date:</span>
+                        <span class="value" id="paymentDate">March 28, 2025</span>
+                    </div>
+                </div>
+                <p>A receipt has been sent to your email address.</p>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" id="viewReceipt">View Receipt</button>
+                <button class="btn btn-primary" id="goToDashboard">Go to Dashboard</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <div class="logo-icon">
+                        <i class="fas fa-parking"></i>
+                    </div>
+                    <span>ParkEase</span>
+                </div>
+                <div class="footer-links">
+                    <a href="#">About Us</a>
+                    <a href="#">Contact</a>
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+                <div class="footer-social">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 ParkEase. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/payment.js"></script>
+</body>
+</html>
+

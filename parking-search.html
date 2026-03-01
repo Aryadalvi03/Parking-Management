@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Find Parking - ParkSpot</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/parking-search.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+</head>
+<body>
+  <nav class="navbar">
+    <div class="container">
+      <div class="navbar-content">
+        <a href="index.html" class="logo">
+          <div class="logo-icon">
+            <i class="fa-solid fa-car"></i>
+          </div>
+          <span>ParkSpot</span>
+        </a>
+        <div class="nav-links" id="navLinks">
+          
+          <a href="parking-search.html" class="active">Find Parking</a>
+          <a href="add-parking.html">Add Parking</a>
+          <a href="owner-login.html">Owner Login</a>
+          <a href="user-login.html">User Login</a>
+          <a href="payment.html">Payment</a>
+        </div>
+        <button class="menu-toggle" id="menuToggle">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <div class="container">
+      <div class="search-header">
+        <h1>Find Parking Near You</h1>
+        <p>View available parking spots, restricted areas, and no-parking zones in real-time</p>
+      </div>
+
+      <div class="search-content">
+        <div class="map-container">
+          <div class="card">
+            <div class="card-header">
+              <h2>Parking Map</h2>
+              <p id="locationStatus">Loading your location...</p>
+            </div>
+            <div class="card-body no-padding">
+              <div id="parkingMap"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="sidebar">
+          <div class="card">
+            <div class="card-header">
+              <h2>Legend</h2>
+              <p>Map symbols explanation</p>
+            </div>
+            <div class="card-body">
+              <div class="legend-items">
+                <div class="legend-item">
+                  <div class="legend-icon green">
+                    <i class="fa-solid fa-car"></i>
+                  </div>
+                  <span>Available Parking</span>
+                </div>
+                <div class="legend-item">
+                  <div class="legend-icon yellow">
+                    <i class="fa-solid fa-triangle-exclamation"></i>
+                  </div>
+                  <span>Restricted Area</span>
+                </div>
+                <div class="legend-item">
+                  <div class="legend-icon red">
+                    <i class="fa-solid fa-ban"></i>
+                  </div>
+                  <span>No Parking Zone</span>
+                </div>
+                <div class="legend-item">
+                  <div class="legend-icon blue">
+                    <i class="fa-solid fa-map-pin"></i>
+                  </div>
+                  <span>Your Location</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card" id="selectedSpotCard" style="display: none;">
+            <div class="card-header">
+              <div class="spot-header">
+                <h2 id="spotName">Spot Name</h2>
+                <span class="badge" id="spotType">Available</span>
+              </div>
+              <p id="spotAvailability">0 of 0 spaces available</p>
+            </div>
+            <div class="card-body">
+              <div id="spotDetails">
+                <!-- Spot details will be inserted here -->
+              </div>
+            </div>
+            <div class="card-footer" id="spotFooter">
+              <!-- Book button will be inserted here if applicable -->
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="parking-list-section">
+        <h2>Available Parking Spots</h2>
+        <div class="parking-list" id="parkingList">
+          <!-- Parking spots will be inserted here -->
+          <div class="loading-spots">
+            <div class="loading-card"></div>
+            <div class="loading-card"></div>
+            <div class="loading-card"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/parking-search.js"></script>
+</body>
+</html>
+

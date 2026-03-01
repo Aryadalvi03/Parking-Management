@@ -1,0 +1,543 @@
+/* Payment Page Specific Styles */
+.page-header {
+    text-align: center;
+    margin: 2rem 0;
+  }
+  
+  .page-header h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--gray-800);
+    margin-bottom: 0.5rem;
+  }
+  
+  .page-header p {
+    color: var(--gray-600);
+    font-size: 1.1rem;
+  }
+  
+  .payment-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+  }
+  
+  /* Booking Summary Card */
+  .booking-summary {
+    grid-column: 1 / 2;
+  }
+  
+  .booking-details {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .booking-item {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px dashed var(--gray-200);
+  }
+  
+  .booking-item:last-child {
+    border-bottom: none;
+  }
+  
+  .booking-item.total {
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 2px solid var(--gray-300);
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: var(--gray-900);
+  }
+  
+  .booking-item .label {
+    color: var(--gray-600);
+  }
+  
+  .booking-item .value {
+    font-weight: 500;
+  }
+  
+  /* Payment Method Card */
+  .payment-method {
+    grid-column: 1 / 3;
+  }
+  
+  .payment-tabs {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    border-bottom: 2px solid var(--gray-200);
+    padding-bottom: 1rem;
+  }
+  
+  .payment-tab {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.25rem;
+    border-radius: var(--border-radius-lg);
+    background-color: var(--gray-100);
+    border: 2px solid var(--gray-200);
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    color: var(--gray-700);
+  }
+  
+  .payment-tab:hover {
+    background-color: var(--gray-200);
+  }
+  
+  .payment-tab.active {
+    background-color: var(--primary-color);
+    color: var(--white);
+    border-color: var(--primary-dark);
+  }
+  
+  .payment-tab-content {
+    display: none;
+  }
+  
+  .payment-tab-content.active {
+    display: block;
+    animation: fadeIn 0.3s ease;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  /* Payment Form */
+  .payment-form {
+    max-width: 100%;
+  }
+  
+  .form-group {
+    margin-bottom: 1.25rem;
+  }
+  
+  .form-row {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.25rem;
+  }
+  
+  .form-row .form-group {
+    flex: 1;
+    margin-bottom: 0;
+  }
+  
+  .form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    color: var(--gray-700);
+  }
+  
+  .form-group input {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 2px solid var(--gray-300);
+    border-radius: var(--border-radius-lg);
+    font-family: inherit;
+    font-size: 1rem;
+    transition: all 0.2s ease;
+  }
+  
+  .form-group input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+  }
+  
+  .input-icon {
+    position: relative;
+  }
+  
+  .input-icon input {
+    padding-right: 2.5rem;
+  }
+  
+  .input-icon i {
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--gray-500);
+  }
+  
+  .card-icons {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+  }
+  
+  .card-icons i {
+    font-size: 1.5rem;
+    color: var(--gray-600);
+  }
+  
+  .checkbox-container {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    user-select: none;
+  }
+  
+  .checkbox-container input {
+    width: auto;
+    margin-right: 0.5rem;
+  }
+  
+  .cvv-info {
+    cursor: help;
+  }
+  
+  /* PayPal Content */
+  .paypal-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 1.5rem;
+    text-align: center;
+  }
+  
+  .paypal-logo {
+    max-width: 150px;
+  }
+  
+  .btn-paypal {
+    background-color: #0070ba;
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: var(--border-radius-lg);
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+  
+  .btn-paypal:hover {
+    background-color: #005ea6;
+  }
+  
+  /* Wallet Content */
+  .wallet-balance {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.5rem;
+    text-align: center;
+  }
+  
+  .balance-amount {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--gray-900);
+  }
+  
+  .wallet-info {
+    margin-top: 1rem;
+    color: var(--gray-600);
+  }
+  
+  /* Promo Code Card */
+  .promo-code {
+    grid-column: 2 / 3;
+  }
+  
+  .promo-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .input-group {
+    display: flex;
+    gap: 0.5rem;
+  }
+  
+  .input-group input {
+    flex: 1;
+    padding: 0.75rem 1rem;
+    border: 2px solid var(--gray-300);
+    border-radius: var(--border-radius-lg);
+    font-family: inherit;
+    font-size: 1rem;
+  }
+  
+  .input-group input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+  }
+  
+  .promo-message {
+    font-size: 0.875rem;
+    min-height: 1.5rem;
+  }
+  
+  .promo-message.success {
+    color: var(--success-color);
+  }
+  
+  .promo-message.error {
+    color: var(--danger-color);
+  }
+  
+  /* Payment Summary */
+  .payment-summary {
+    grid-column: 1 / 3;
+    background-color: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: var(--border-radius-2xl);
+    border: 2px solid var(--gray-200);
+    border-bottom: 4px solid var(--gray-300);
+    border-right: 4px solid var(--gray-300);
+    box-shadow: var(--shadow-xl);
+    padding: 1.5rem;
+  }
+  
+  .summary-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.75rem 0;
+    border-bottom: 1px dashed var(--gray-200);
+  }
+  
+  .summary-item:last-of-type {
+    border-bottom: none;
+  }
+  
+  .summary-item.total {
+    margin-top: 0.5rem;
+    padding-top: 1rem;
+    border-top: 2px solid var(--gray-300);
+    font-weight: 700;
+    font-size: 1.25rem;
+    color: var(--gray-900);
+  }
+  
+  .summary-item.discount {
+    color: var(--success-color);
+    font-weight: 600;
+  }
+  
+  .btn-pay {
+    width: 100%;
+    margin-top: 1.5rem;
+    padding: 1rem;
+    font-size: 1.1rem;
+  }
+  
+  .secure-payment {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 1rem;
+    color: var(--gray-600);
+    font-size: 0.875rem;
+  }
+  
+  /* Modal */
+  .modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .modal.active {
+    display: flex;
+    animation: fadeIn 0.3s ease;
+  }
+  
+  .modal-content {
+    background-color: white;
+    border-radius: var(--border-radius-2xl);
+    box-shadow: var(--shadow-xl);
+    width: 90%;
+    max-width: 500px;
+    overflow: hidden;
+    animation: slideUp 0.3s ease;
+  }
+  
+  @keyframes slideUp {
+    from {
+      transform: translateY(50px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  .modal-header {
+    padding: 1.5rem;
+    text-align: center;
+    border-bottom: 1px solid var(--gray-200);
+  }
+  
+  .success-icon {
+    font-size: 3rem;
+    color: var(--success-color);
+    margin-bottom: 1rem;
+  }
+  
+  .modal-body {
+    padding: 1.5rem;
+  }
+  
+  .confirmation-details {
+    background-color: var(--gray-100);
+    border-radius: var(--border-radius-lg);
+    padding: 1rem;
+    margin: 1rem 0;
+  }
+  
+  .confirmation-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem 0;
+  }
+  
+  .confirmation-item .label {
+    color: var(--gray-600);
+  }
+  
+  .confirmation-item .value {
+    font-weight: 600;
+  }
+  
+  .modal-footer {
+    padding: 1.5rem;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    border-top: 1px solid var(--gray-200);
+  }
+  
+  /* Footer */
+  .footer {
+    background: linear-gradient(to right, var(--gray-800), var(--gray-900));
+    color: var(--gray-300);
+    padding: 3rem 0 1.5rem;
+    margin-top: 3rem;
+  }
+  
+  .footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin-bottom: 2rem;
+  }
+  
+  .footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--white);
+    font-weight: 700;
+    font-size: 1.25rem;
+  }
+  
+  .footer-links {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+  }
+  
+  .footer-links a {
+    color: var(--gray-300);
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+  
+  .footer-links a:hover {
+    color: var(--white);
+  }
+  
+  .footer-social {
+    display: flex;
+    gap: 1rem;
+  }
+  
+  .footer-social a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    background-color: var(--gray-700);
+    color: var(--white);
+    transition: all 0.2s ease;
+  }
+  
+  .footer-social a:hover {
+    background-color: var(--primary-color);
+    transform: translateY(-3px);
+  }
+  
+  .footer-bottom {
+    text-align: center;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--gray-700);
+  }
+  
+  /* Responsive */
+  @media (max-width: 992px) {
+    .payment-container {
+      grid-template-columns: 1fr;
+    }
+  
+    .booking-summary,
+    .promo-code,
+    .payment-method,
+    .payment-summary {
+      grid-column: 1;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .form-row {
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+  
+    .payment-tabs {
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+  
+    .footer-content {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+  }
+  
+  

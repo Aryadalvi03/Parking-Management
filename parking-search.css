@@ -1,0 +1,208 @@
+.search-header {
+  padding: 2rem 0 1rem;
+}
+
+.search-header h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.search-header p {
+  color: var(--gray-600);
+}
+
+.search-content {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 2rem;
+}
+
+#parkingMap {
+  height: 500px;
+  width: 100%;
+  border-radius: 0 0 var(--border-radius-2xl) var(--border-radius-2xl);
+  z-index: 1;
+}
+
+.legend-items {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.legend-icon {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-md);
+}
+
+.legend-icon.green {
+  background-color: var(--success-color);
+  color: var(--white);
+}
+
+.legend-icon.yellow {
+  background-color: var(--warning-color);
+  color: var(--white);
+}
+
+.legend-icon.red {
+  background-color: var(--danger-color);
+  color: var(--white);
+}
+
+.legend-icon.blue {
+  background-color: var(--primary-color);
+  color: var(--white);
+}
+
+.spot-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.parking-list-section {
+  margin-top: 2rem;
+}
+
+.parking-list-section h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.parking-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1rem;
+}
+
+.parking-card {
+  background: linear-gradient(to right, #f0f9ff, #e0f2fe);
+  border: 2px solid var(--gray-200);
+  border-bottom: 4px solid var(--gray-300);
+  border-right: 4px solid var(--gray-300);
+  border-radius: var(--border-radius-xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.parking-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-xl);
+}
+
+.parking-card-header {
+  padding: 1rem;
+  border-bottom: 1px solid var(--gray-200);
+}
+
+.parking-card-header h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+.parking-card-body {
+  padding: 1rem;
+}
+
+.parking-info {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.75rem;
+}
+
+.parking-info-label {
+  color: var(--gray-600);
+}
+
+.parking-info-value {
+  font-weight: 600;
+}
+
+.availability-bar {
+  width: 100%;
+  height: 0.5rem;
+  background-color: var(--gray-200);
+  border-radius: var(--border-radius-full);
+  margin-bottom: 1rem;
+  overflow: hidden;
+}
+
+.availability-progress {
+  height: 100%;
+  background-color: var(--success-color);
+  border-radius: var(--border-radius-full);
+}
+
+.parking-card-footer {
+  padding: 1rem;
+  border-top: 1px solid var(--gray-200);
+}
+
+.loading-spots {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1rem;
+}
+
+.loading-card {
+  height: 200px;
+  background-color: var(--gray-100);
+  border-radius: var(--border-radius-xl);
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
+
+/* Custom Leaflet Styles */
+.custom-marker-icon {
+  background: transparent !important;
+  border: none !important;
+}
+
+.leaflet-popup-content-wrapper {
+  border-radius: 12px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.leaflet-popup-content {
+  margin: 8px 12px;
+  line-height: 1.5;
+}
+
+.leaflet-container {
+  font-family: inherit;
+  border-radius: 0.75rem;
+  overflow: hidden;
+}
+
+@media (max-width: 992px) {
+  .search-content {
+    grid-template-columns: 1fr;
+  }
+}
+
